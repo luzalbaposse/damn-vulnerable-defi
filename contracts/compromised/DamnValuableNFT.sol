@@ -20,6 +20,7 @@ contract DamnValuableNFT is ERC721, AccessControl {
     }
 
     function mint(address to) external returns (uint256) {
+        //@param to: address to mint the NFT to
         require(hasRole(MINTER_ROLE, msg.sender), "Forbidden");
         
         // Increment ID and issue new NFT. Note that ID starts at 1.
